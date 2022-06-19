@@ -6,7 +6,7 @@ bindings are also available.  The [web demo] shows OpenSlide's rendering
 of various slide formats.
 
 OpenSlide and its official language bindings are released under the
-terms of the [GNU Lesser General Public License, version 2.1][lgplv2.1].
+terms of the [GNU Lesser General Public License, version 2.1][license].
 
 [OpenSlide]: https://openslide.org/
 [C library]: https://github.com/openslide/openslide/
@@ -14,4 +14,4 @@ terms of the [GNU Lesser General Public License, version 2.1][lgplv2.1].
 [Python]: https://github.com/openslide/openslide-python/
 [Java]: https://github.com/openslide/openslide-java/
 [web demo]: https://openslide.org/demo/
-[lgplv2.1]: https://github.com/openslide/openslide/blob/main/lgpl-2.1.txt
+[license]: https://openslide.org/license/
