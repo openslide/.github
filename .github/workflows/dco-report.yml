@@ -69,7 +69,7 @@ jobs:
           body-includes: Developer Certificate of Origin
 
       - name: Report good signoff
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         if: steps.result.outputs.success == 'true'
         with:
           issue-number: ${{ steps.result.outputs.pr }}
@@ -97,7 +97,7 @@ jobs:
             [license]: https://openslide.org/license/
 
       - name: Report bad signoff
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         if: steps.result.outputs.success != 'true'
         with:
           issue-number: ${{ steps.result.outputs.pr }}
