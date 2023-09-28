@@ -10,6 +10,8 @@
 #         workflows: ["DCO"]
 #         types:
 #           - completed
+#     permissions:
+#       contents: none
 #     jobs:
 #       comment:
 #         name: Organization
