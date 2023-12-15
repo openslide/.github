@@ -39,7 +39,7 @@ jobs:
         dco-check -v
         touch result/success
     - name: Upload result
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: result
