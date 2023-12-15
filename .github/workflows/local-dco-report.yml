@@ -1,0 +1,19 @@
+# DCO report for PRs to this repo
+
+name: DCO report
+
+on:
+  workflow_run:
+    workflows: ["DCO"]
+    types:
+      - completed
+
+permissions:
+  contents: none
+
+jobs:
+  comment:
+    name: Organization
+    uses: ./.github/workflows/dco-report.yml
+    secrets:
+      OPENSLIDE_BOT_TOKEN: ${{ secrets.OPENSLIDE_BOT_TOKEN }}
