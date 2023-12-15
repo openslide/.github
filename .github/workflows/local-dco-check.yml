@@ -1,0 +1,15 @@
+# DCO check for PRs to this repo
+
+name: DCO
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Organization
+    uses: ./.github/workflows/dco-check.yml
