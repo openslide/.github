@@ -38,7 +38,8 @@ jobs:
         echo ${{ github.event.pull_request.head.sha }} > result/head
         dco-check -v
         touch result/success
-    - uses: actions/upload-artifact@v3
+    - name: Upload result
+      uses: actions/upload-artifact@v3
       if: always()
       with:
         name: result
