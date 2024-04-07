@@ -57,7 +57,7 @@ jobs:
           fi
 
       - name: Find existing comment
-        uses: peter-evans/find-comment@v2
+        uses: peter-evans/find-comment@v3
         id: search
         continue-on-error: true
         with:
@@ -66,7 +66,7 @@ jobs:
           body-includes: Developer Certificate of Origin
 
       - name: Report good signoff
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         if: steps.result.outputs.success == 'true' && steps.result.outputs.have_token == 'true'
         with:
           token: ${{ secrets.OPENSLIDE_BOT_TOKEN }}
@@ -95,7 +95,7 @@ jobs:
             [license]: https://openslide.org/license/
 
       - name: Report bad signoff
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         if: steps.result.outputs.success != 'true' && steps.result.outputs.have_token == 'true'
         with:
           token: ${{ secrets.OPENSLIDE_BOT_TOKEN }}
