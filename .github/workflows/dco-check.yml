@@ -36,7 +36,16 @@ jobs:
         echo ${{ github.event.number }} > result/pr
         echo ${{ github.event.pull_request.base.sha }} > result/base
         echo ${{ github.event.pull_request.head.sha }} > result/head
-        dco-check -v
+        # Dependabot produces commits whose author email doesn't match the
+        # email in the signoff.  Don't check signoffs for Dependabot's
+        # commits, but only if Dependabot is also the PR author, since
+        # commit authorship isn't authenticated.
+        args=
+        if [ "${{ github.event.pull_request.user.login }}" = "dependabot[bot]" ]; then
+            echo "Dependabot PR detected.  Accepting Dependabot commits."
+            args="-e 49699333+dependabot[bot]@users.noreply.github.com"
+        fi
+        dco-check -v $args
         touch result/success
     - name: Upload result
       uses: actions/upload-artifact@v4
