@@ -34,7 +34,7 @@ jobs:
     if: ${{ github.event.workflow_run.event == 'pull_request' }}
     steps:
       - name: Download state
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: result
           path: result
