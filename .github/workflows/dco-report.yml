@@ -30,7 +30,7 @@ on:
 jobs:
   comment:
     name: Post PR comment
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     if: ${{ github.event.workflow_run.event == 'pull_request' }}
     steps:
       - name: Download state

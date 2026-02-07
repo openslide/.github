@@ -22,7 +22,7 @@ on:
 jobs:
   check:
     name: Check signoffs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
     - name: Check out repo
       uses: actions/checkout@v5
